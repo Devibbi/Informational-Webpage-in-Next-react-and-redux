@@ -5,7 +5,6 @@ import Weather from './components/Weather';
 import Quote from './components/Quote';
 import ImageGallery from './components/ImageGallery';
 import GoalsList from './components/GoalsList';
-import './styles/globals.css';
 
 function App() {
   return (

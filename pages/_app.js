@@ -1,4 +1,6 @@
 import '../src/styles/globals.css';
+import { Provider } from 'react-redux';
+import { store } from '../src/redux/store';
 import { useEffect } from 'react';
 
 function MyApp({ Component, pageProps }) {
@@ -49,7 +51,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <>
+    <Provider store={store}>
       <style jsx global>{`
         /* Override any cloud image that might be added by a third-party script */
         body::after, 
@@ -67,7 +69,7 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
       <Component {...pageProps} />
-    </>
+    </Provider>
   );
 }
 
