@@ -1,0 +1,52 @@
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import Weather from './components/Weather';
+import Quote from './components/Quote';
+import ImageGallery from './components/ImageGallery';
+import GoalsList from './components/GoalsList';
+import './styles/globals.css';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-400/30 via-indigo-300/20 to-pink-300/30 bg-fixed">
+      <Provider store={store}>
+        <div className="max-w-7xl mx-auto px-4 py-8">
+          <header className="text-center mb-8 animate-fadeInUp">
+            <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-4">
+              Inspirational Homepage
+            </h1>
+            <p className="text-xl text-purple-700 max-w-2xl mx-auto">
+              Your daily dose of motivation, beautiful imagery, and personal goals tracking
+            </p>
+          </header>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div className="lg:col-span-1">
+              <Weather />
+            </div>
+            <div className="lg:col-span-2">
+              <Quote />
+            </div>
+          </div>
+          
+          <ImageGallery />
+          
+          <div className="mt-12">
+            <GoalsList />
+          </div>
+          
+          <footer className="mt-16 text-center text-sm text-gray-600">
+            <p>© 2025 Inspirational Homepage • Made with ❤️ and React</p>
+            <div className="flex justify-center gap-4 mt-4">
+              <button className="btn-primary text-sm py-2">Next Quote</button>
+              <button className="btn-secondary text-sm py-2">New Background</button>
+            </div>
+          </footer>
+        </div>
+      </Provider>
+    </div>
+  );
+}
+
+export default App;
