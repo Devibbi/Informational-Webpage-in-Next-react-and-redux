@@ -7,6 +7,7 @@ import ImageGallery from './components/ImageGallery';
 import GoalsList from './components/GoalsList';
 
 function App() {
+  console.log('App component rendering');
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-400/30 via-indigo-300/20 to-pink-300/30 bg-fixed p-4">
       <Provider store={store}>
